@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Add Product</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <input type="text" class="form-control mb-3" formControlName="code" placeholder="Code...">
+        <input type="text" class="form-control mb-3" formControlName="name" placeholder="Name...">
+        <input type="text" class="form-control mb-3" formControlName="price" placeholder="Price...">
+        <input type="text" class="form-control mb-3" formControlName="imageUrl" placeholder="img...">
+        <button class="btn btn-danger">ADD</button>
+    </form>
+</div>

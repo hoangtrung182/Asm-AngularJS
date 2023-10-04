@@ -1,0 +1,11 @@
+<div class="container" *ngIf="current">
+    <h1>Update Product</h1>
+    <form [formGroup]="currentProduct" (ngSubmit)="onSubmit()">
+        <input type="text" class="form-control mb-3" [(ngModel)]="current.code" formControlName="code" placeholder="Code...">
+        <input type="text" class="form-control mb-3" [(ngModel)]="current.name" formControlName="name" placeholder="Name...">
+        <input type="text" class="form-control mb-3" [(ngModel)]="current.price" formControlName="price" placeholder="Price...">
+        <input type="text" class="form-control mb-3" [(ngModel)]="current.imageUrl" formControlName="imageUrl" placeholder="img...">
+        <button class="btn btn-danger">Updated</button>
+    </form>
+</div>
+

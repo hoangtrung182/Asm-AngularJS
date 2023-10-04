@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="text-center p-4">Welcome to my Shop</h1>
+    <div class="d-flex justify-content-center align-items-center">
+        <h4>Search: </h4>
+        <input type="text" [(ngModel)]="searchValue" class="form-control w-75 mx-3" placeholder="Searching for something...">
+        <button class="btn btn-primary">Search</button>
+    </div>
+    <div class="row gap-4 m-4 text-center">
+        <div class="card col-4 col-span-4" *ngFor="let product of products | searchBox: searchValue;index as i" style="width: 18rem">
+            <span>{{ product.code }}</span>
+            <div class="">
+                <a routerLink="/products/{{product.id}}">
+                    <img [src]="product.avatar" width="200" class="my-2" alt="">
+                </a>
+            </div>
+            <h4 class="fs-4 italic">{{ product.name }}</h4>
+            <p>Price Tag: <span class="text-danger fst-italic">{{ product.price}} $</span></p>
+            <button class="btn btn-success mb-3 width-[70px]">ADD TO CARD</button>
+        </div>
+    </div>
+
+</div>

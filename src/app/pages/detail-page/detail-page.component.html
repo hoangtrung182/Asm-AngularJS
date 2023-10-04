@@ -1,0 +1,8 @@
+<div class="container" *ngIf="currentProduct">
+    <span>Mã : {{ currentProduct.code }}</span>
+    <div class="">
+        <img [src]="currentProduct.imageUrl" alt="">
+    </div>
+    <h2>{{ currentProduct.name }}</h2>
+    <p>Price: {{ currentProduct.price }}</p>
+</div>

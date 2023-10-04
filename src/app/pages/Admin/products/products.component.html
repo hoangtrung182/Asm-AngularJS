@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h1 class="text-center">Product Component</h1>
+    <div class="d-flex align-items-center justify-content-center">
+        <input type="text" [(ngModel)]="searchText" class="form-control mr-3" placeholder="Look up for something..." />
+        <button class="btn btn-success ml-4">Search</button>
+    </div>
+
+    <a class="btn btn-primary my-2 float-end" routerLink="/admin/products/add">ADD NEW</a>
+
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Avatar</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | searchBox: searchText;index as i">           
+                <td>{{ i + 1}}</td>
+                <td><img [src]="product.imageUrl" width="100" alt=""></td>
+                <td>{{ product.name}}</td>
+                <td>{{ product.price | currency : 'VND' : 'symbol'}}</td>
+                <td>
+                    <button class="btn btn-danger mx-4" (click)="removeProduct(product.id!)">Remove</button>
+                    <a class="btn btn-primary" routerLink="/admin/products/edit/{{product.id}}">Update</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 
+        Directive: *ngIf, *ngFor
+        Data binding: 
+        Pipe
+        Input, Ouput,
+        
+        Http methods,
+        services
+    -->
+</div>
